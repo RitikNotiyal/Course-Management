@@ -65,55 +65,52 @@ const FilterSort = ({
             </div>
 
             {/* Filters and Sort */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
                 {/* Filters */}
-                <Selector
-                    value={categoryFilter}
-                    onChange={(e) => setCategoryFilter(e.target.value)}
-                    options={categoryOptions}
-                    className="text-sm"
-                    aria-label="Filter by category"
-                />
-
-                <Selector
-                    value={levelFilter}
-                    onChange={(e) => setLevelFilter(e.target.value)}
-                    options={levelOptions}
-                    className="text-sm"
-                    aria-label="Filter by level"
-                />
-
-                <Selector
-                    value={statusFilter}
-                    onChange={(e) => setStatusFilter(e.target.value)}
-                    options={statusOptions}
-                    className="text-sm"
-                    aria-label="Filter by status"
-                />
+                <div>
+                    <h3 className="text-sm font-medium text-gray-700 mb-2">Filter</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <Selector
+                            value={categoryFilter}
+                            onChange={(e) => setCategoryFilter(e.target.value)}
+                            options={categoryOptions}
+                            className="text-sm"
+                            aria-label="Filter by category"
+                        />
+                        <Selector
+                            value={levelFilter}
+                            onChange={(e) => setLevelFilter(e.target.value)}
+                            options={levelOptions}
+                            className="text-sm"
+                            aria-label="Filter by level"
+                        />
+                        <Selector
+                            value={statusFilter}
+                            onChange={(e) => setStatusFilter(e.target.value)}
+                            options={statusOptions}
+                            className="text-sm"
+                            aria-label="Filter by status"
+                        />
+                    </div>
+                </div>
 
                 {/* Sort Controls */}
+                <div>
+                <h3 className="text-sm font-medium text-gray-700 mb-2">Sort</h3>
                 <div className="flex space-x-2">
                     <Selector
-                        value={sortBy}
-                        onChange={(e) => setSortBy(e.target.value)}
+                        value={`${sortBy}_${sortOrder}`}
+                        onChange={(e) => {
+                            const [by, order] = e.target.value.split('_');
+                            setSortBy(by);
+                            setSortOrder(order);
+                        }}
                         options={SORT_OPTIONS}
                         className="text-sm flex-1"
                         aria-label="Sort by"
                     />
-                    <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-                        className="px-2 flex-shrink-0"
-                        aria-label={`Sort ${sortOrder === 'asc' ? 'descending' : 'ascending'}`}
-                        title={`Sort ${sortOrder === 'asc' ? 'descending' : 'ascending'}`}
-                    >
-                        {sortOrder === 'asc' ? (
-                            <ArrowUpIcon className="w-4 h-4" />
-                        ) : (
-                            <ArrowDownIcon className="w-4 h-4" />
-                        )}
-                    </Button>
+                    </div>
                 </div>
 
                 {/* Clear Filters */}

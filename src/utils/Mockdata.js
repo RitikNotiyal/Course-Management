@@ -24,10 +24,11 @@ export const STATUS = [
 
 // Sort options
 export const SORT_OPTIONS = [
-    { value: 'title', label: 'Sort by Title' },
-    { value: 'dateCreated', label: 'Sort by Date' },
+    { value: 'dateCreated_desc', label: 'Newest' },
+    { value: 'dateCreated_asc', label: 'Oldest' },
+    { value: 'title_asc', label: 'Title (A-Z)' },
+    { value: 'title_desc', label: 'Title (Z-A)' },
     { value: 'level', label: 'Sort by Level' },
-    { value: 'category', label: 'Sort by Category' }
 ];
 
 // Mock data

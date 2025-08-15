@@ -8,13 +8,13 @@ const Footer = () => {
     return (
         <footer className="bg-gray-900 text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                     {/* Company Info */}
                     <div className="space-y-4">
                         <div className="flex items-center space-x-2">
                             <AcademicCapIcon className="h-6 w-6 text-blue-400" />
-                            <span className="text-lg font-bold">CareerSuite.ai</span>
+                            <span className="text-lg font-bold">CoursEra</span>
                         </div>
                         <p className="text-gray-300 text-sm">Empowering Talent. Enabling Growth.</p>
                         <p className="text-gray-400 text-xs">AI-powered career growth ecosystem for modern professionals.</p>
@@ -30,15 +30,6 @@ const Footer = () => {
                     </div>
 
                     {/* Support */}
-                    <div>
-                        <h3 className="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Support</h3>
-                        <ul className="space-y-2">
-                            <li><Link to="/help-center" className="text-gray-300 hover:text-white text-sm transition-colors">Help Center</Link></li>
-                            <li><Link to="/docs" className="text-gray-300 hover:text-white text-sm transition-colors">Documentation</Link></li>
-                            <li><Link to="/api" className="text-gray-300 hover:text-white text-sm transition-colors">API</Link></li>
-                            <li><Link to="/status" className="text-gray-300 hover:text-white text-sm transition-colors">Status</Link></li>
-                        </ul>
-                    </div>
 
                     {/* Contact Info */}
                     <div>
@@ -46,11 +37,11 @@ const Footer = () => {
                         <div className="space-y-3">
                             <div className="flex items-center space-x-2">
                                 <EnvelopeIcon className="h-4 w-4 text-gray-400" />
-                                <span className="text-gray-300 text-sm">hello@careersuite.ai</span>
+                                <a href="mailto:hello@careersuite.ai" className="text-gray-300 text-sm">hello@careersuite.ai</a>
                             </div>
                             <div className="flex items-center space-x-2">
                                 <PhoneIcon className="h-4 w-4 text-gray-400" />
-                                <span className="text-gray-300 text-sm">+1 (555) 123-4567</span>
+                                <a href="tel:+15551234567" className="text-gray-300 text-sm">+1 (555) 123-4567</a>
                             </div>
                             <div className="flex items-center space-x-2">
                                 <MapPinIcon className="h-4 w-4 text-gray-400" />
